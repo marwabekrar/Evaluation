@@ -39,21 +39,23 @@ handleSubmit(event) {
     Meteor.call('forms.insert', firstname,lastname,email,phone,address,city,province,postalCode,country,comment ,  (err, res) =>{
         if (err){
             this.setState({error: err.reason})
+        }else{
+           // Clear form
+            ReactDOM.findDOMNode(this.refs.nom).value = '';
+            ReactDOM.findDOMNode(this.refs.prenom).value = '';
+            ReactDOM.findDOMNode(this.refs.courriel).value = '';
+            ReactDOM.findDOMNode(this.refs.telephone).value = '';
+            ReactDOM.findDOMNode(this.refs.adresse).value = '';
+            ReactDOM.findDOMNode(this.refs.ville).value = '';
+            ReactDOM.findDOMNode(this.refs.province).value = '';
+            ReactDOM.findDOMNode(this.refs.codePostale).value = '';
+            ReactDOM.findDOMNode(this.refs.pays).value = '';
+            ReactDOM.findDOMNode(this.refs.commentaire).value = '';
         }
     });
     
  
-    // Clear form
-    ReactDOM.findDOMNode(this.refs.nom).value = '';
-    ReactDOM.findDOMNode(this.refs.prenom).value = '';
-    ReactDOM.findDOMNode(this.refs.courriel).value = '';
-    ReactDOM.findDOMNode(this.refs.telephone).value = '';
-    ReactDOM.findDOMNode(this.refs.adresse).value = '';
-    ReactDOM.findDOMNode(this.refs.ville).value = '';
-    ReactDOM.findDOMNode(this.refs.province).value = '';
-    ReactDOM.findDOMNode(this.refs.codePostale).value = '';
-    ReactDOM.findDOMNode(this.refs.pays).value = '';
-    ReactDOM.findDOMNode(this.refs.commentaire).value = '';
+   
   }
 
 
