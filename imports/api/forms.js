@@ -2,6 +2,7 @@ import {Meteor} from 'meteor/meteor';
 import {Mongo} from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 import shortid from 'shortid';
+import moment from 'moment';
 
 // Creates a new Mongo collections and exports it
 export const Forms = new Mongo.Collection('forms');
@@ -58,8 +59,7 @@ Meteor.methods({
              },
         postalCode:{
               type: String,
-              min: 1,
-              regEx: SimpleSchema.RegEx.ZipCode
+              min: 1
              },
         country:{
              type: String,
@@ -67,7 +67,7 @@ Meteor.methods({
              },
         comment:{
             type: String,
-             min: 1
+             min: 10
              }
         
    }).validate({firstname,lastname,email,phone,address,city,province,postalCode,country,comment});
