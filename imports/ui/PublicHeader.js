@@ -38,6 +38,7 @@ export default class PublicHeader extends React.Component{
         return (
            <div className= 'header__link-container'>
            <Link to="/" className='link'> Home </Link> 
+            <Link to="/dashboard" className='link'>Dashboard </Link> 
            <Link to="/contact-us" className='link'> Contact-us </Link> 
            <button  className='button button--link-text' onClick= { () => Accounts.logout((err)=>{'logout', err})}> Logout</button> 
            </div>

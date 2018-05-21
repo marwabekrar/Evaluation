@@ -17,10 +17,7 @@ export default class AddForm extends Component {
 
 
 handleSubmit(event) {
-    event.preventDefault();
- 
-    // Find the text field via the React ref
-    
+    event.preventDefault();    
     const firstname = ReactDOM.findDOMNode(this.refs.prenom).value.trim();
     const lastname = ReactDOM.findDOMNode(this.refs.nom).value.trim();
     const email = ReactDOM.findDOMNode(this.refs.courriel).value.trim();

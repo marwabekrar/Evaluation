@@ -4,17 +4,22 @@ import SimpleSchema from 'simpl-schema';
 import shortid from 'shortid';
 import moment from 'moment';
 
-// Creates a new Mongo collections and exports it
+
 export const Forms = new Mongo.Collection('forms');
 
-//Roles.addUsersToRoles('GqqGaxYtePn8JQHkd', 'admin', Roles.GLOBAL_GROUP);
+
 
 
 
 if(Meteor.isServer) {
   Meteor.publish('forms', function(){
+    if (Roles.userIsInRole( Meteor.userId(), 'admin' )){
+            return Forms.find({});
+        } else{
+              return Forms.find({userId: this.userId});
+        }
     
-    return Forms.find({userId: this.userId});
+  
   });
 }
 

@@ -1,7 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Accounts } from 'meteor/accounts-base'
+import { Accounts } from 'meteor/accounts-base';
+import PublicHeader from './PublicHeader';
 
 export default class SignUp extends React.Component{
   constructor (props){
@@ -41,6 +42,8 @@ export default class SignUp extends React.Component{
   
   render (){
     return (
+      <div>
+      <PublicHeader title ="Join Us"/>
       <div className='boxed-view'>
       <div className='boxed-view__box'>
       <h1> SignUp  </h1>
@@ -54,6 +57,7 @@ export default class SignUp extends React.Component{
       
       <Link to="/login"> Already have an account? </Link>
       </div> 
+      </div>
       </div>
            );
   }

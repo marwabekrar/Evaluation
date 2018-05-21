@@ -15,3 +15,5 @@ Accounts.validateNewUser((user)=>{
    
     return true;
   });
+
+Roles.addUsersToRoles( "djn9rzdHHFT4FRA4K", ['admin'] );

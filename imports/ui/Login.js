@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import React from 'react';
 //import {Link} from 'react-router';
 import { Link } from 'react-router-dom';
-
+import PublicHeader from './PublicHeader';
 
 
 export default class Login extends React.Component{
@@ -35,6 +35,8 @@ export default class Login extends React.Component{
   
   render (){
     return (
+      <div>
+      <PublicHeader title ="Sign In"/>
       <div className='boxed-view'>
       <div className='boxed-view__box'>
       <h1> Login </h1>
@@ -48,7 +50,8 @@ export default class Login extends React.Component{
       
       <Link to="/signup"> Create an account? </Link>
       </div> 
-      </div>    
+      </div>
+      </div> 
            );
   }
   
